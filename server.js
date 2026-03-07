@@ -10,7 +10,7 @@ const httpsAgent = new https.Agent({ keepAlive: true });
 
 const axiosInstance = axios.create({
   httpAgent,
-  httpsAgent
+  httpsAgent,
   timeout: 60000,
 });
 const app = express();
