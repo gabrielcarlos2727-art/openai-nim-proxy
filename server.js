@@ -2,7 +2,17 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const http = require('http');
+const https = require('https');
 
+const httpAgent = new http.Agent({ keepAlive: true });
+const httpsAgent = new https.Agent({ keepAlive: true });
+
+const axiosInstance = axios.create({
+  httpAgent,
+  httpsAgent
+  timeout: 60000,
+});
 const app = express();
 const PORT = process.env.PORT || 3000;
 
