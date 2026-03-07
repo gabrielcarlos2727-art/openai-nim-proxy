@@ -11,7 +11,7 @@ const httpsAgent = new https.Agent({ keepAlive: true });
 const axiosInstance = axios.create({
   httpAgent,
   httpsAgent,
-  timeout: 60000,
+  timeout: 120000,
 });
 const app = express();
 const PORT = process.env.PORT || 3000;
